@@ -10,11 +10,29 @@ std::string RemoveAllSubstrings(std::string s1, std::string s2);
 std::string RemoveFirstSubstring(std::string s1, std::string s2);
 
 // Joins all strings in a vector together, using the glue string in between them
-std::string Join(std::vector<std::string> pieces, std::string glue);
+std::string Join(std::vector<std::string> pieces, std::string glue) {
+    std::string output;
+    for (std::string p : pieces) {
+        output += (p + glue);
+    }
+    return output;
+}
 
 // takes two vectors of integers, a and b. The function then removes elements from a if they are also in b.
 // If the integer is in b, but not in a, nothing happens.
-std::vector<int> MatchVectors(std::vector<int> a, std::vector<int> b);
+std::vector<int> MatchVectors(std::vector<int> a, std::vector<int> b) {
+    std::vector<int> output;
+    bool is_in = false;
+
+    for (int x : a) {
+        for (int y : b) {
+            if (x==y) is_in=true;
+        }
+        if (!is_in) output.push_back(x);
+    }
+
+    return output;
+}
 
 // divides an input integer by 2 until it is impossible to do so, then returns the final number.
 // (16 = 2 * 2 * 2 * 2 * 1 -> 1, 7 -> 7, 26 = 2 * 13 -> 13, 52 = 2 * 2 * 13 -> 13)
