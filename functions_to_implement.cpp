@@ -10,11 +10,29 @@ std::string RemoveAllSubstrings(std::string s1, std::string s2);
 std::string RemoveFirstSubstring(std::string s1, std::string s2);
 
 // Joins all strings in a vector together, using the glue string in between them
-std::string Join(std::vector<std::string> pieces, std::string glue);
+std::string Join(std::vector<std::string> pieces, std::string glue) {
+    std::string output;
+    for (std::string p : pieces) {
+        output += (p + glue);
+    }
+    return output;
+}
 
 // takes two vectors of integers, a and b. The function then removes elements from a if they are also in b.
 // If the integer is in b, but not in a, nothing happens.
-std::vector<int> MatchVectors(std::vector<int> a, std::vector<int> b);
+std::vector<int> MatchVectors(std::vector<int> a, std::vector<int> b) {
+    std::vector<int> output;
+    bool is_in = false;
+
+    for (int x : a) {
+        for (int y : b) {
+            if (x==y) is_in=true;
+        }
+        if (!is_in) output.push_back(x);
+    }
+
+    return output;
+}
 
 // divides an input integer by 2 until it is impossible to do so, then returns the final number.
 // (16 = 2 * 2 * 2 * 2 * 1 -> 1, 7 -> 7, 26 = 2 * 13 -> 13, 52 = 2 * 2 * 13 -> 13)
@@ -103,6 +121,7 @@ std::vector<int> AddN(std::vector<int>, int n);
 std::vector<double> AddN(std::vector<double>, double n);
 
 // adds n to each element of the vector
+<<<<<<< HEAD
 std::vector<std::string> AddN(std::vector<std::string> v, std::string n) {
     for (std::string s : v) s += n;
     return v;
@@ -114,6 +133,13 @@ std::vector<int> SubtractN(std::vector<int> v, int n) {
     for (int x : v) x -= n;
     return v;
 }
+=======
+std::vector<std::string> AddN(std::vector<std::string>, std::string n);
+
+
+// subtracts n to each element of the vector
+std::vector<int> SubtractN(std::vector<int>, int n);
+>>>>>>> main
 
 // subtracts n to each element of the vector
 std::vector<double> SubtractN(std::vector<double>, double n);
