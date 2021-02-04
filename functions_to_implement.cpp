@@ -1,5 +1,9 @@
 /* String functions section */
+/* String functions section */
 
+std::string test(std::string s1, std::string s2);
+
+std::string boring(std::string s1, std::string s2);
 // Splits a single string on separator into a vector of strings
 std::vector<std::string> Split(std::string whole, std::string separator);
 
