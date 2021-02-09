@@ -16,8 +16,12 @@ std::string RemoveFirstSubstring(std::string s1, std::string s2);
 // Joins all strings in a vector together, using the glue string in between them
 std::string Join(std::vector<std::string> pieces, std::string glue) {
     std::string output;
-    for (std::string p : pieces) {
-        output += (p + glue);
+    for (int i=0, n=pieces.size(); i<n; ++i) {
+        if (i==n-1) {
+            output += pieces[i];
+        } else {
+            output += (pieces[i] + glue);
+        }
     }
     return output;
 }
@@ -125,7 +129,6 @@ std::vector<int> AddN(std::vector<int>, int n);
 std::vector<double> AddN(std::vector<double>, double n);
 
 // adds n to each element of the vector
-<<<<<<< HEAD
 std::vector<std::string> AddN(std::vector<std::string> v, std::string n) {
     for (std::string s : v) s += n;
     return v;
@@ -137,13 +140,6 @@ std::vector<int> SubtractN(std::vector<int> v, int n) {
     for (int x : v) x -= n;
     return v;
 }
-=======
-std::vector<std::string> AddN(std::vector<std::string>, std::string n);
-
-
-// subtracts n to each element of the vector
-std::vector<int> SubtractN(std::vector<int>, int n);
->>>>>>> main
 
 // subtracts n to each element of the vector
 std::vector<double> SubtractN(std::vector<double>, double n);
