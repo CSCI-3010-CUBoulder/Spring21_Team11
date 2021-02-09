@@ -1,5 +1,5 @@
 language: cpp
 
 script:
-  - g++ -std=c++17 -Wall test.cpp -o test
+  - g++ -std=c++17 -Wall test.cpp -o test [join]
   - ./test
