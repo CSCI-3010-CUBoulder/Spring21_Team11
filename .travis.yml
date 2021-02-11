@@ -3,3 +3,4 @@ language: cpp
 script:
   - g++ -std=c++17 -Wall test.cpp -o test
   - ./test [join]
+  - ./test [Factorial]
