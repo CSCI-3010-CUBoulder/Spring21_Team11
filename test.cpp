@@ -6,3 +6,7 @@
 TEST_CASE ("All strings in vector are joined.", "[join]") {
     REQUIRE(Join(std::vector<std::string>(3, "piece"), "glue")=="piecegluepiecegluepiece");
 }
+TEST_CASE ("computing", "[factorial]")
+{
+    REQUIRE( Factorial(3)  == 6);
+};
